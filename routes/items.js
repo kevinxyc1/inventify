@@ -1,17 +1,7 @@
 const express = require('express')
-const multer = require('multer')
-const path = require('path')
-const fs = require('fs')
 const router = express.Router()
 const Item = require('../models/item')
-const uploadPath = path.join('public', Item.coverImageBasePath)
 const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
-const upload = multer({
-    dest: uploadPath,
-    fileFilter: (req, file, callback) => {
-        callback(null, imageMimeTypes.includes(file.mimetype))
-    } 
-})
 
 // All Items Route
 router.get('/', async (req, res) => {
@@ -43,34 +33,22 @@ router.get('/new', (req, res) => {
 })
 
 // Create Item Route
-router.post('/', upload.single('cover'), async (req, res) => {
-    const fileName = req.file != null ? req.file.filename : null
+router.post('/', async (req, res) => {
     const item = new Item({
         name: req.body.name,
         dateAdded: new Date(req.body.dateAdded),
         count: req.body.count,
-        coverImageName: fileName,
         description: req.body.description
     })
+    saveCover(item, req.body.cover)
 
     try {
         const newItem = await item.save()
         res.redirect('items')
     } catch {
-        if (item.coverImageName != null){
-            removeItemCover(item.coverImageName)
-        }
         renderNewPage(res, item, true)
     }
 })
-
-function removeItemCover(fileName) {
-    fs.unlink(path.join(uploadPath, fileName), err => {
-        if(err) {
-            console.error(err);
-        }
-    })
-}
 
 async function renderNewPage(res, item, hasError = false) {
     try {
@@ -80,6 +58,17 @@ async function renderNewPage(res, item, hasError = false) {
         res.render('items/new', params)
     } catch {
         res.redirect('items')
+    }
+}
+
+function saveCover(item, coverEncoded){
+    if(coverEncoded == null) {
+        return
+    }
+    const cover = JSON.parse(coverEncoded)
+    if (cover != null && imageMimeTypes.includes(cover.type)) {
+        item.coverImage = new Buffer.from(cover.data, 'base64')
+        item.coverImageType = cover.type
     }
 }
 
