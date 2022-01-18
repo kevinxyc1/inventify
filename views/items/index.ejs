@@ -1,4 +1,4 @@
-<h2>Search Inventory</h2>
+<h2 class="page-header">Search Inventory</h2>
 <form action='/items' method="GET">
     <div>
         <label>Name</label>
@@ -12,7 +12,7 @@
         <label>Added Before</label>
         <input type="date" name="dateAddedBefore" value="<%=searchOptions.dateAddedBefore%>">
     </div>
-    <button type="submit">Search</button>
+    <button class="btn btn-primary" type="submit">Search</button>
 </form>
 <div>
     <% items.forEach(item => { %>
