@@ -1,0 +1,25 @@
+<div>
+    <label>Name</label>
+    <input type="text" name="name" value="<%= item.name %>">
+</div>
+
+<div>
+    <label>Date Added</label>
+    <input type="date" name="dateAdded" 
+    value="<%= item.dateAdded == null ? '' : item.dateAdded.toISOString().split('T')[0] %>">
+</div>
+
+<div>
+    <label>Count</label>
+    <input type="text" name="count" min="1" value="<%= item.count %>">
+</div>
+
+<div>
+    <label>Cover</label>
+    <input type="file" name="cover">
+</div>
+
+<div>
+    <label>Description</label>
+    <textarea name="description"><%= item.description %></textarea>
+</div>
