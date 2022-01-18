@@ -4,6 +4,8 @@
   <a href="https://www.codefactor.io/repository/github/kevinxyc1/inventify">
     <img src="https://www.codefactor.io/repository/github/kevinxyc1/inventify/badge" alt="CodeFactor" />
   </a>
+  <img alt="node-current" src="https://img.shields.io/node/v/mongoose">
+  <img alt="node-current" src="https://img.shields.io/node/v/express">
   <img alt="NPM" src="https://img.shields.io/npm/l/express">
 </p>
 
@@ -18,13 +20,11 @@ Inventify is an inventory tracking web application designed for logistic compani
 
 ---
 
-- [1. About The Project](#1-about-the-projects)
-- [2. Installation](#2-installation)
-- [3. Agents and environments](#3-agents-and-environments)
-- [4. Future work](#4-future-work)
-- [5. Acknowledgements](#5-acknowledgements)
+- [1. About The Project](#1-about-the-project)
+- [2. Get Started](#2-get-started)
+- [3. Future work](#3-future-work)
 
-## 1. About The Projects
+## 1. About The Project
 
 #### Basic Feature
 It satisfies the basic CRUD functionality including:
@@ -32,18 +32,19 @@ It satisfies the basic CRUD functionality including:
 - Edit items (name, tag, image cover, date added, count, description)
 - Delete items
 - View a list of items
-  - **Homepage** displays the 10 most recent added items
+  - **Home** page displays the 10 most recent added items
   - **Inventory** page displays all items 
   
 #### Additional Feature
-- Search and filter based on name, tag, date added after, date added before in **Inventory** page
+- In **Inventory** page: Search and filter based on name, tag, date added after, date added before 
 
-### Technologies
+#### Technologies
 - **Node/Express** backend in Javascript
 - **MongoDB/Mongoose** database
 - **HTML/CSS/EJS** frontend
+- **Heroku** deployment
   
-## 2. Installation
+## 2. Get Started
 
 ### Prerequisites
 
@@ -72,16 +73,8 @@ npm run start
 
 5. View the app in `localhost:3000`
 
-## 3. Agents and environments
+## 3. Future work
 
-Three agents — described in [gym_simplifiedtetris/agents](https://github.com/OliverOverend/gym-simplifiedtetris/blob/master/gym_simplifiedtetris/agents) — are provided. There are currently 64 environments provided; a description can be found in [gym_simplifiedtetris/envs](https://github.com/OliverOverend/gym-simplifiedtetris/blob/master/gym_simplifiedtetris/envs).
-
-## 4. Future work
-
-- Normalise the observation spaces
-- Implement an action space that only permits non-terminal actions to be taken
-- Implement more shaping rewards: potential-style, potential-based, dynamic potential-based, and non-potential. Optimise their weights using an optimisation algorithm.
-
-## 5. Acknowledgements
-
-This package utilises several methods from the [codebase](https://github.com/andreanlay/tetris-ai-deep-reinforcement-learning) developed by andreanlay (2020) and the [codebase](https://github.com/Benjscho/gym-mdptetris) developed by Benjscho (2021).
+- Add features for creating warehouses and assigning items to different locations
+- Improve frontend styling
+- Allow storing images with generated thumbnails
