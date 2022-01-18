@@ -1,18 +1,23 @@
 <h2 class="page-header">Search Inventory</h2>
 <form action='/items' method="GET">
-    <div>
-        <label>Name</label>
-        <input type="text" name="name" value="<%= searchOptions.name%>">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Name</label>
+            <input type="text" name="name" value="<%= searchOptions.name%>">
+        </div>
+        <div class="form-item">
+            <label>Added After</label>
+            <input type="date" name="dateAddedAfter" value="<%=searchOptions.dateAddedAfter%>">
+        </div>
+        <div class="form-item">
+            <label>Added Before</label>
+            <input type="date" name="dateAddedBefore" value="<%=searchOptions.dateAddedBefore%>">
+        </div>
     </div>
-    <div>
-        <label>Added After</label>
-        <input type="date" name="dateAddedAfter" value="<%=searchOptions.dateAddedAfter%>">
+    
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
-    <div>
-        <label>Added Before</label>
-        <input type="date" name="dateAddedBefore" value="<%=searchOptions.dateAddedBefore%>">
-    </div>
-    <button class="btn btn-primary" type="submit">Search</button>
 </form>
 <div>
     <% items.forEach(item => { %>
