@@ -5,9 +5,6 @@
     <img src="https://www.codefactor.io/repository/github/kevinxyc1/inventify/badge" alt="CodeFactor" />
   </a>
   <img alt="NPM" src="https://img.shields.io/npm/l/express">
-  <a href="https://github.com/OliverOverend/gym-simplifiedtetris/commits/dev">
-    <img src="https://img.shields.io/github/last-commit/OliverOverend/gym-simplifiedtetris/dev?style=for-the-badge">
-  </a>
 </p>
 
 <p align="center">
