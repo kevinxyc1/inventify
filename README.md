@@ -4,7 +4,6 @@
   <a href="https://www.codefactor.io/repository/github/kevinxyc1/inventify">
     <img src="https://www.codefactor.io/repository/github/kevinxyc1/inventify/badge" alt="CodeFactor" />
   </a>
-  <img alt="node-current" src="https://img.shields.io/node/v/mongoose">
   <img alt="node-current" src="https://img.shields.io/node/v/express">
   <img alt="NPM" src="https://img.shields.io/npm/l/express">
 </p>
@@ -26,19 +25,22 @@ Inventify is an inventory tracking web application designed for logistic compani
 
 ## 1. About The Project
 
-#### Basic Feature
+### Basic Feature
 It satisfies the basic CRUD functionality including:
-- Create inventory items (with image upload)
-- Edit items (name, tag, image cover, date added, count, description)
-- Delete items
+- Create inventory items in **Add Item** page
+- Edit items by clicking on the image of item and **Edit**
+  - Attributes that can be edited: name, tag, image cover, date added, count, description
+- Delete items by clicking on the image of item and **Delete**
 - View a list of items
   - **Home** page displays the 10 most recent added items
-  - **Inventory** page displays all items 
+  - **Inventory** page displays all items
+- Implemented Input Validation & Error Handling
+  - cannot add/update an item without entering name
   
-#### Additional Feature
+### Additional Feature
 - In **Inventory** page: Search and filter based on name, tag, date added after, date added before 
 
-#### Technologies
+### Technologies
 - **Node/Express** backend in Javascript
 - **MongoDB/Mongoose** database
 - **HTML/CSS/EJS** frontend
@@ -75,6 +77,7 @@ npm run start
 
 ## 3. Future work
 
+- Check for duplicated names when creating a new item
 - Add features for creating warehouses and assigning items to different locations
 - Improve frontend styling
 - Allow storing images with generated thumbnails
