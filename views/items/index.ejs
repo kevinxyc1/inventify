@@ -16,6 +16,8 @@
 </form>
 <div>
     <% items.forEach(item => { %>
-        <img height="150" width="100" src="<%= item.coverImagePath %>">
+        <a href="/items/<%= item.id %>">
+            <img height="150" width="100" src="<%= item.coverImagePath %>">
+        </a>
     <% }) %>
 </div>

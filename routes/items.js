@@ -44,18 +44,94 @@ router.post('/', async (req, res) => {
 
     try {
         const newItem = await item.save()
-        res.redirect('items')
+        res.redirect(`items/${newItem.id}`)
     } catch {
         renderNewPage(res, item, true)
     }
 })
 
-async function renderNewPage(res, item, hasError = false) {
+// Show Item Route
+router.get('/:id', async (req, res) => {
     try {
-        const item = new Item()
+        const item = await Item.findById(req.params.id)
+        res.render('items/show', {item: item})
+    } catch {
+        res.redirect('/')
+    }
+})
+
+// Edit Item Route
+router.get('/:id/edit', async (req, res) => {
+    try {
+        const item = await Item.findById(req.params.id)
+        renderEditPage(res, item)
+    } catch {
+        res.redirect('/')
+    }
+    
+})
+
+// Update Item Route
+router.put('/:id', async (req, res) => {
+    let item
+
+    try {
+        item = await Item.findById(req.params.id)
+        item.name = req.body.name
+        item.dateAdded = new Date(req.body.dateAdded)
+        item.count = req.body.count
+        item.description = req.body.description
+        if (req.body.cover != null && req.body.cover !== ''){
+            saveCover(item, req.body.cover)
+        }
+        await item.save()
+        res.redirect(`/items/${item.id}`)
+    } catch {
+        if (item != null) {
+            renderEditPage(res, item, true)
+        } else {
+            res.redirect('/')
+        }
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    let item
+    try {
+        item = await Item.findById(req.params.id)
+        await item.remove()
+        res.redirect('/items')
+    } catch {
+        if (item != null) {
+            res.render('items/show', {
+                item: item,
+                errorMessage: 'Could not remove item'
+            })
+        } else {
+            res.redirect('/')
+        }
+    }
+})
+
+async function renderNewPage(res, item, hasError = false) {
+    renderFormPage(res, item, 'new', hasError)
+}
+
+async function renderEditPage(res, item, hasError = false) {
+    renderFormPage(res, item, 'edit', hasError)
+}
+
+async function renderFormPage(res, item, form, hasError = false) {
+    try {
         const params = {item: item}
-        if (hasError) params.errorMessage = 'Error Creating Item'
-        res.render('items/new', params)
+        if (hasError) {
+            if (form === "edit") {
+                params.errorMessage = 'Error Updating Item'
+            } else {
+                params.errorMessage = 'Error Creating Item'
+            }
+        }
+        res.render(`items/${form}`, params)
     } catch {
         res.redirect('items')
     }
