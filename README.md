@@ -4,18 +4,9 @@
   <a href="https://www.codefactor.io/repository/github/kevinxyc1/inventify">
     <img src="https://www.codefactor.io/repository/github/kevinxyc1/inventify/badge" alt="CodeFactor" />
   </a>
-  <a href="https://pypi.org/project/gym-simplifiedtetris/">
-    <img src="https://img.shields.io/pypi/pyversions/gym-simplifiedtetris?style=for-the-badge">
-  </a>
-  <a href="/LICENSE.md">
-    <img src="https://img.shields.io/github/license/OliverOverend/gym-simplifiedtetris?color=darkred&style=for-the-badge">
-  </a>
   <img alt="NPM" src="https://img.shields.io/npm/l/express">
   <a href="https://github.com/OliverOverend/gym-simplifiedtetris/commits/dev">
     <img src="https://img.shields.io/github/last-commit/OliverOverend/gym-simplifiedtetris/dev?style=for-the-badge">
-  </a>
-  <a href="https://github.com/OliverOverend/gym-simplifiedtetris/releases">
-    <img src="https://img.shields.io/github/release-date/OliverOverend/gym-simplifiedtetris?color=teal  &style=for-the-badge">
   </a>
 </p>
 
