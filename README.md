@@ -38,7 +38,10 @@ It satisfies the basic CRUD functionality including:
   - cannot add/update an item without entering name
   
 ### Additional Feature
-- In **Inventory** page: Search and filter based on name, tag, date added after, date added before 
+- Search and filter implemented in **Inventory** page
+  - based on item name/tag (regex pattern matching)
+  - based on item date added (filter all items with date-added after or/and before a date)
+  - implemented with MongoDB query
 
 ### Technologies
 - **Node/Express** backend in Javascript
@@ -58,13 +61,11 @@ It satisfies the basic CRUD functionality including:
 1. git clone the project
 
 2. Install NPM packages and dependencies
-The package is pip installable:
 ```bash
 npm install
 ```
 
-3. Create `.env` file in the root directory and enter DATABASE_URL for MongoDB
-Example:
+3. Create `.env` file in the root directory and enter DATABASE_URL for MongoDB. For Example:
 ```bash
 DATASET_URL="mongodb://localhost/inventify"
 ```
