@@ -6,6 +6,13 @@
             <input type="text" name="name" value="<%= searchOptions.name%>">
         </div>
         <div class="form-item">
+            <label>Tag</label>
+            <input type="text" name="tag" value="<%= searchOptions.tag%>">
+        </div>
+        
+    </div>
+    <div class="form-row">
+        <div class="form-item">
             <label>Added After</label>
             <input type="date" name="dateAddedAfter" value="<%=searchOptions.dateAddedAfter%>">
         </div>
@@ -20,9 +27,5 @@
     </div>
 </form>
 <div>
-    <% items.forEach(item => { %>
-        <a href="/items/<%= item.id %>">
-            <img height="150" width="100" src="<%= item.coverImagePath %>">
-        </a>
-    <% }) %>
+    <%- include("../partials/itemGrid", { items: items })%>
 </div>

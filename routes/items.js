@@ -15,6 +15,9 @@ router.get('/', async (req, res) => {
     if (req.query.dateAddedAfter != null && req.query.dateAddedAfter != '') {
         query = query.gte('dateAdded', req.query.dateAddedAfter)
     }
+    if (req.query.tag != null && req.query.tag != '') {
+        query = query.regex('tag', new RegExp(req.query.tag, 'i'))
+    }
     try {
         const items = await query.exec()
         res.render('items/index', {
@@ -38,7 +41,8 @@ router.post('/', async (req, res) => {
         name: req.body.name,
         dateAdded: new Date(req.body.dateAdded),
         count: req.body.count,
-        description: req.body.description
+        description: req.body.description,
+        tag: req.body.tag
     })
     saveCover(item, req.body.cover)
 
@@ -81,6 +85,7 @@ router.put('/:id', async (req, res) => {
         item.dateAdded = new Date(req.body.dateAdded)
         item.count = req.body.count
         item.description = req.body.description
+        item.tag = req.body.tag
         if (req.body.cover != null && req.body.cover !== ''){
             saveCover(item, req.body.cover)
         }
@@ -138,7 +143,7 @@ async function renderFormPage(res, item, form, hasError = false) {
 }
 
 function saveCover(item, coverEncoded){
-    if(coverEncoded == null) {
+    if(coverEncoded == null || coverEncoded == "") {
         return
     }
     const cover = JSON.parse(coverEncoded)

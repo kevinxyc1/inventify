@@ -8,6 +8,9 @@ const itemSchema = new mongoose.Schema({
     description: {
         type: String
     },
+    tag: {
+        type: String
+    },
     count: {
         type: Number,
         required: true

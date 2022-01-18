@@ -9,17 +9,24 @@
         <input type="date" name="dateAdded"
             value="<%= item.dateAdded == null ? '' : item.dateAdded.toISOString().split('T')[0] %>">
     </div>
+</div>
 
+<div class="form-row">
     <div class="form-item">
         <label>Count</label>
         <input type="text" name="count" min="1" value="<%= item.count %>">
+    </div>
+
+    <div class="form-item">
+        <label>Tag</label>
+        <input type="text" name="tag" value="<%= item.tag %>">
     </div>
 </div>
 
 <div class="form-row">
     <div class="form-item form-item-no-grow">
         <label>Cover</label>
-        <input type="file" name="cover" class="filepond">
+        <input type="file" name="cover" class="item-cover filepond">
     </div>
 
     <div class="form-item">

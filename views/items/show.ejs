@@ -1,12 +1,22 @@
 <h2 class="page-header"><%= item.name %></h2>
-<div>
-    <img width="100" height="150" src="<%= item.coverImagePath %>">
-    <div>Date Added: <%= item.dateAdded.toDateString()%></div>
-    <div>Count: <%= item.count%></div>
-    <div>Description: <%= item.description%></div>
-</div>
-<br />
-<div class="form-row btn-row">
-    <a class="btn btn-primary" href="/items/<%= item.id %>/edit">Edit</a>
-    <%- include("../partials/deleteForm", { url: `/items/${item.id}`})%>
+<div class="item-details">
+    <div>
+        <img class="item-cover" src="<%= item.coverImagePath %>">
+        <div class="item-details-btn-grid">
+            <a class="btn btn-primary" href="/items/<%= item.id %>/edit">Edit</a>
+            <%- include("../partials/deleteForm", { url: `/items/${item.id}`})%>
+        </div>
+    </div>
+    
+    <div class="item-details-grid">
+        <div class="item-details-label">Date Added:</div>
+        <div><%= item.dateAdded.toDateString()%></div>
+        <div class="item-details-label">Tag:</div>
+        <div><%= item.tag%></div>
+        <div class="item-details-label">Count:</div>
+        <div><%= item.count%></div>
+        <div class="item-details-label">Description:</div>
+        <div><%= item.description%></div>
+    </div>
+    
 </div>

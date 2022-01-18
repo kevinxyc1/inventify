@@ -1,0 +1,10 @@
+<% itemCoverClass = locals.large ? 'item-cover-large' : '' %>
+<% itemGridClass = locals.large ? 'item-grid-large' : '' %>
+
+<div class="item-grid <%= itemGridClass %>">
+    <% items.forEach(item => { %>
+    <a href="/items/<%= item.id %>">
+        <img class="item-cover <%= itemCoverClass %>" src="<%= item.coverImagePath %>">
+    </a>
+    <% }) %>
+</div>

@@ -1,0 +1,55 @@
+:root {
+    --item-cover-width: 200px;
+    --item-cover-width-large: 325px;
+    --item-cover-aspect-ratio: 1;
+}
+
+.item-cover {
+    width: var(--item-cover-width);
+    height: calc(var(--item-cover-width) / var(--item-cover-aspect-ratio));
+}
+
+.item-cover-large {
+    --item-cover-width: var(--item-cover-width-large);
+}
+
+.item-grid {
+    display: grid;
+    justify-content: center;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, var(--item-cover-width));
+}
+
+.item-grid-large {
+    grid-template-columns: repeat(auto-fill, var(--item-cover-width-large));
+}
+
+.item-details {
+    display: flex;
+}
+
+.item-details-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.item-details-grid {
+    display: grid;
+    align-content: flex-start;
+    align-items: center;
+    grid-gap: 1rem;
+    grid-template-columns: auto auto;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.item-details-btn-grid {
+    display: grid;
+    justify-items: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    grid-template-areas: "edit delete";
+    grid-gap: .5rem;
+    margin-top: .5rem;
+}
