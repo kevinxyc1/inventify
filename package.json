@@ -1,5 +1,5 @@
 {
-  "name": "inventory-tracking-app",
+  "name": "inventify",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kevinxyc1/inventory-tracking-app.git"
+    "url": "git+https://github.com/kevinxyc1/inventify.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kevinxyc1/inventory-tracking-app/issues"
+    "url": "https://github.com/kevinxyc1/inventify/issues"
   },
-  "homepage": "https://github.com/kevinxyc1/inventory-tracking-app#readme",
+  "homepage": "https://github.com/kevinxyc1/inventify#readme",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.2",
