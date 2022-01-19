@@ -48,6 +48,7 @@ It satisfies the basic CRUD functionality including:
 - **MongoDB/Mongoose** database
 - **HTML/CSS/EJS** frontend
 - **Heroku** deployment
+- **Jest** testing
   
 ## 2. Get Started
 
