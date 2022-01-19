@@ -19,7 +19,8 @@ Inventify is an inventory tracking web application designed for logistic compani
 
 ---
 
-https://user-images.githubusercontent.com/42011894/150074562-27d0606f-baa7-4c01-bcf1-53966af58ce0.mov
+https://user-images.githubusercontent.com/42011894/150074759-142fe35a-b7ca-42c5-af61-9ad6103078f4.mov
+
 
 - [1. About The Project](#1-about-the-project)
 - [2. Get Started](#2-get-started)
