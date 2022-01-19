@@ -29,4 +29,3 @@ app.use('/', indexRouter)
 app.use('/items', itemRouter)
 
 module.exports = app
-// app.listen(process.env.PORT || 3000)
