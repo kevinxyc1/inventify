@@ -28,4 +28,5 @@ db.once('open', () => console.log('Connected to Mongoose'))
 app.use('/', indexRouter)
 app.use('/items', itemRouter)
 
-app.listen(process.env.PORT || 3000)
+module.exports = app
+// app.listen(process.env.PORT || 3000)

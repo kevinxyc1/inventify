@@ -2,10 +2,11 @@
   "name": "inventify",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "start.js",
   "scripts": {
-    "start": "node server.js",
-    "devStart": "nodemon server.js"
+    "start": "node start.js",
+    "devStart": "nodemon start.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,17 @@
     "mongoose": "^6.1.7"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^2.2.0",
     "dotenv": "^14.2.0",
-    "nodemon": "^2.0.15"
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "request": "^2.88.2",
+    "supertest": "^6.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
